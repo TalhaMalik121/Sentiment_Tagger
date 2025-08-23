@@ -6,6 +6,12 @@ import streamlit as st
 import torch.nn.functional as F
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 from typing import List, Tuple
+import nltk
+
+# Ensure punkt tokenizer is available
+nltk.download("punkt")
+nltk.download("punkt_tab")  # sometimes needed for newer NLTK versions
+
 
 # -----------------------------
 # Page setup
@@ -168,3 +174,4 @@ if analyze_clicked:
 
 # Footer tip
 st.caption("Tip: First run may take a bit while models download. Subsequent runs are much faster.")
+
